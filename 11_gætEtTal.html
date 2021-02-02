@@ -16,20 +16,21 @@
 
     <script>
         const tilfeldigTal = Math.round(Math.random() * 20);
-
+        let antalGæt = 0;
         document.querySelector("button").addEventListener("click", guessTal);
 
         function guessTal() {
+            antalGæt++;
             const guess = document.querySelector("#gæt").value;
             console.log("tilfeldigtal", tilfeldigTal);
             console.log("brugergæt", guess);
 
             if (guess == tilfeldigTal) {
-                console.log("Riktig!");
+                console.log(`Riktig! du har gættet ${antalGæt} gange`);
             } else if (guess > tilfeldigTal) {
-                console.log("for høyt!");
+                console.log(`for høyt! du har gættet ${antalGæt} gange`);
             } else {
-                console.log("for lavt!");
+                console.log(`for lavt! du har gættet ${antalGæt} gange`);
             }
 
 
