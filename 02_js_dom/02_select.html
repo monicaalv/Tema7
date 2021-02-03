@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html struktur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-gap: 20px;
+            margin: 40px;
+
+        }
+
+        article {
+            border: 1px solid black;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+
+        footer {
+            padding: 10px 0;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Bilder</h1>
+    </header>
+    <main>
+
+        <section>
+            <article id="innhold1">
+                <img src="placeimg_640_480_sepia_nature.jpg" alt="fjell">
+                <h3>På tur i fjellet</h3>
+                <p>lorem ipsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </article>
+            <article id="innhold2">
+                <img src="placeimg_640_480_sepia_people.jpg" alt="menn">
+                <h3>På tur i storbyen</h3>
+                <p>lorem ipsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>Dette er footer</footer>
+
+    <script>
+        const overskrift = document.querySelector("h1");
+        overskrift.textContent;
+        console.log(overskrift.textContent);
+
+        const pic1 = document.querySelector("article:first-child img");
+        console.log(pic1);
+
+        const underoverskrift = document.querySelector("h3");
+        underoverskrift.textContent;
+        console.log(underoverskrift.textContent);
+
+        const text = document.querySelector("p");
+        text.textContent;
+        console.log(text.textContent);
+
+        const pic2 = document.querySelector("#innhold2 img");
+        console.log(pic2);
+
+        const textByen = document.querySelector("#innhold2 p");
+        console.log(textByen);
+
+    </script>
+
+
+
+
+</body>
+
+</html>
