@@ -73,6 +73,25 @@
         const overskrift = document.querySelector("h1");
         overskrift.textContent;
         console.log(overskrift.textContent);
+        overskrift.textContent = "bilder";
+        console.log(overskrift.textContent);
+
+        const artikkel1Underoverskrift = document.querySelector("article:nth-child(1) h3");
+        artikkel1Underoverskrift.textContent = "Ut på tur, aldri sur!";
+
+        const artikkel1 = document.querySelector("article:nth-child(1) p");
+        artikkel1.textContent = "her er et bilde av naturen i Norge :)";
+
+        const artikkel2 = document.querySelector("article:nth-child(2) p");
+        artikkel2.textContent = "suits";
+
+        const artikkel2underoverskrift = document.querySelector("article:nth-child(2) h3");
+        artikkel2underoverskrift.textContent = "på vei ut en tur";
+
+
+
+
+
 
         const pic1 = document.querySelector("article:first-child img");
         console.log(pic1);
