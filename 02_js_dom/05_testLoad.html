@@ -76,42 +76,45 @@
     <footer>Dette er footer</footer>
 
     <script>
-        const pic1 = document.querySelector("article:first-child img");
-        console.log(pic1);
-        pic1.alt = "bilder av det norske fjell";
-        pic1.src = "ny.jpg";
-
-
-        const pic2 = document.querySelector("#innhold2 img");
-        console.log(pic2);
-        pic2.alt = "mann spiller golf";
-        pic2.src = "golf.jpg";
-
-
-        /*     //ny section
-          let mainSection = document.querySelector("section");
-          //nytt artikkel element
-          let newArticle = document.createElement("article");
-          //nytt h# element
-          let overskrift = document.createElement("h3");
-          //tekst til overskriften
-          let overskriftText = document.createTextNode("Article 3");
-          //innsett tekst i overskriften
-          overskrift.appendChild(overskriftText);
-          //tilføy overskrift til artikkel
-          newArticle.appendChild(overskrift);
-          //tilføy artikkel til section
-          mainSection.appendChild(newArticle);*/
-
-        let info = document.querySelector("#info");
-        info.innerHTML = "<img src='arkitektur.jpg'><h3>Arkitektur eller kunst?</h3><p>Hvem, Hvad, Hvor...</p>";
-
-        //DOM loaded
-
         document.addEventListener("DOMContentLoaded", start);
-
+        //DOM loaded
         function start() {
-            console.log("siden vises");
+            console.log("DOM Loaded");
+
+
+
+            const pic1 = document.querySelector("article:first-child img");
+            console.log(pic1);
+            pic1.alt = "bilder av det norske fjell";
+            pic1.src = "ny.jpg";
+
+
+            const pic2 = document.querySelector("#innhold2 img");
+            console.log(pic2);
+            pic2.alt = "mann spiller golf";
+            pic2.src = "golf.jpg";
+
+
+            /*     //ny section
+              let mainSection = document.querySelector("section");
+              //nytt artikkel element
+              let newArticle = document.createElement("article");
+              //nytt h# element
+              let overskrift = document.createElement("h3");
+              //tekst til overskriften
+              let overskriftText = document.createTextNode("Article 3");
+              //innsett tekst i overskriften
+              overskrift.appendChild(overskriftText);
+              //tilføy overskrift til artikkel
+              newArticle.appendChild(overskrift);
+              //tilføy artikkel til section
+              mainSection.appendChild(newArticle);*/
+
+            let info = document.querySelector("#info");
+            info.innerHTML = "<img src='arkitektur.jpg'><h3>Arkitektur eller kunst?</h3><p>Hvem, Hvad, Hvor...</p>";
+
+
+
         }
 
     </script>
