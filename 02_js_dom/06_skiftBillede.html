@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html struktur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-gap: 20px;
+            margin: 40px;
+
+        }
+
+        article {
+            border: 1px solid black;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+
+        footer {
+            padding: 10px 0;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        #info {
+            border: 1px solid black;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <header>
+        <h1>Bilder</h1>
+    </header>
+    <main>
+
+        <section>
+            <article id="innhold1">
+                <img src="placeimg_640_480_sepia_nature.jpg" alt="fjell">
+                <h3>På tur i fjellet</h3>
+                <p>lorem ipsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </article>
+            <article id="innhold2">
+                <img src="placeimg_640_480_sepia_people.jpg" alt="menn">
+                <h3>På tur i storbyen</h3>
+                <p>lorem ipsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </article>
+
+            <div id="info"></div>
+
+        </section>
+
+    </main>
+
+    <footer>Dette er footer</footer>
+
+    <script>
+        //DOM loaded
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("DOM loaded");
+
+
+            const pic1 = document.querySelector("article:first-child img");
+            console.log(pic1);
+            pic1.alt = "bilder av det norske fjell";
+            pic1.src = "ny.jpg";
+
+
+            const pic2 = document.querySelector("#innhold2 img");
+            console.log(pic2);
+            pic2.alt = "mann spiller golf";
+            pic2.src = "golf.jpg";
+
+
+            /*     //ny section
+              let mainSection = document.querySelector("section");
+              //nytt artikkel element
+              let newArticle = document.createElement("article");
+              //nytt h# element
+              let overskrift = document.createElement("h3");
+              //tekst til overskriften
+              let overskriftText = document.createTextNode("Article 3");
+              //innsett tekst i overskriften
+              overskrift.appendChild(overskriftText);
+              //tilføy overskrift til artikkel
+              newArticle.appendChild(overskrift);
+              //tilføy artikkel til section
+              mainSection.appendChild(newArticle);*/
+
+            let info = document.querySelector("#info");
+            info.innerHTML = "<img src='arkitektur.jpg'><h3>Arkitektur eller kunst?</h3><p>Hvem, Hvad, Hvor...</p>";
+
+
+            let element = document.querySelector("#info");
+
+            element.addEventListener("click", skiftBilde);
+
+            function skiftBilde() {
+                console.log("skift bilde");
+                info.src = "https://placeimg.com/400/300/arch?t=" + tilfældigtTal;
+
+                function tilfældigtTal() {
+                    antalClick++;
+                    const nyttBilde = document.querySelector("#info").value;
+                    console.log("nytt bilde", tilfældigtTal);
+                }
+
+            }
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
