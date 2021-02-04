@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        article {
+            border: 1px solid black;
+            padding: 20px;
+            margin: 10px;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!--   <article id="dyr">
+        <h3></h3>
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="" alt="">
+    </article>-->
+
+    <section id="liste"></section>
+
+    <template>
+        <article class="dyreneIafrika">
+            <h3></h3>
+            <img src="" alt="">
+            <p class="type">Type:</p>
+            <p class="levested">Levested:</p>
+            <p class="github"></p>
+
+
+        </article>
+    </template>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", visMangeDyr);
+
+        let dyr = [
+
+            {
+                "navn": "gris",
+                "bilde": "http://mabe-kea.dk/E19/pics/pig.png",
+                "type": "Art: pattedyr",
+                "levested": "Levested: svinefarm",
+
+
+            },
+            {
+                "navn": "frosk",
+                "type": "Art: amfibie",
+                "levested": "Levested: somp",
+                "bilde": "http://mabe-kea.dk/E19/pics/frog.png"
+            },
+            {
+                "navn": "rev",
+                "type": "Art: pattedyr",
+                "levested": "Levested: skog",
+                "bilde": "http://mabe-kea.dk/E19/pics/fox.png"
+            },
+            {
+                "navn": "sild",
+                "type": "Art: pattedyr",
+                "levested": "Levested: havet",
+                "bilde": "http://mabe-kea.dk/E19/pics/sild.jpg"
+            },
+            {
+                "navn": "krokodille",
+                "type": "Type: krypdyr",
+                "levested": "Levested: vann",
+                "bilde": "http://mabe-kea.dk/E19/pics/kroko.jpg"
+            }
+
+        ];
+
+
+        function visMangeDyr() {
+            console.log("siden er loadet");
+
+            const listevisning = document.querySelector("#liste");
+            const dyreneIafrikaTemplate = document.querySelector("template");
+            dyr.forEach(individ => {
+                //plaser dyr i HTLM
+                let klon = dyreneIafrikaTemplate.cloneNode(true).content;
+                klon.querySelector("h3").textContent = individ.navn;
+                klon.querySelector(".type").textContent = individ.type;
+                klon.querySelector(".levested").textContent = individ.levested;
+                klon.querySelector(".github").textContent = individ.github;
+                klon.querySelector("img").src = individ.bilde;
+                listevisning.appendChild(klon);
+
+            })
+
+        }
+
+    </script>
+</body>
+
+</html>
