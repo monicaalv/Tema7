@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        article {
+            border: 1px solid black;
+            padding: 20px;
+            margin: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <section></section>
+
+    <template>
+        <article class="dyreneIafrika">
+            <h3></h3>
+            <img src="" alt="">
+            <p class="type">Type:</p>
+            <p class="levested">Levested:</p>
+        </article>
+    </template>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", hentData);
+        console.log("siden er loadet");
+        const listevisning = document.querySelector("section");
+        const temp = document.querySelector("template");
+
+        const fil = "dyr.json";
+
+        async function hentData() {
+            const result = await fetch(fil);
+            const json = await result.json();
+            vis(json);
+        }
+
+        function vis(dyr) {
+            //løb igennem array
+            dyr.forEach(individ => {
+                //plaser dyr i HTLM
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector("h3").textContent = individ.navn;
+                klon.querySelector(".type").textContent = individ.type;
+                klon.querySelector(".levested").textContent = individ.levested;
+                klon.querySelector("img").src = individ.bilde;
+                listevisning.appendChild(klon);
+            })
+
+        }
+    </script>
+</body></html>
