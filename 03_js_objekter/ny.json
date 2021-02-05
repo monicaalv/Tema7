@@ -1,0 +1,23 @@
+[
+    {
+        "merke": "volvo",
+        "modell": "360GL",
+        "motor": "bensin",
+        "km": 500000,
+        "utstyr": ["blinklys", "skinratt"]
+    },
+    {
+        "merke": "vw",
+        "modell": "golf",
+        "motor": "bensin",
+        "km": 50000,
+        "utstyr": ["setevarmer", "gps"]
+    },
+    {
+        "merke": "tesla",
+        "modell": "s",
+        "motor": "el",
+        "km": 1000,
+        "utstyr": ["gps", "aircon"]
+    }
+]
